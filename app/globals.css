@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at 15% 20%, rgba(34, 211, 238, 0.18), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(244, 63, 94, 0.18), transparent 45%),
+    #07090f;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.6);
+  color: #fff;
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.6), rgba(244, 63, 94, 0.6));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cursor-glow {
+  position: fixed;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-ring {
+  position: absolute;
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  border-radius: 999px;
+}
+
+.shadow-soft {
+  box-shadow: 0 30px 80px rgba(14, 165, 233, 0.2);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
+
+.chart-line {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: drawLine 2.2s ease forwards;
+}
+
+.chart-line-secondary {
+  stroke-dasharray: 420;
+  stroke-dashoffset: 420;
+  animation: drawLine 2.8s ease forwards;
+}
+
+.bar {
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(var(--bar-scale, 0.2));
+  transition: transform 0.8s ease;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
