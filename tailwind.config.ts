@@ -1,23 +1,30 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./components/**/*.{js,ts,jsx,tsx,mdx}", "./content/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        ink: "#0b0f1c",
-        nocturne: "#07090f",
-        neon: "#22d3ee",
-        flare: "#f43f5e",
-        glow: "#0ea5e9"
+        background: "var(--bg)",
+        surface: "var(--bg-elevated)",
+        foreground: "var(--text)",
+        muted: "var(--text-muted)",
+        border: "var(--border)",
+        glass: "var(--glass-bg)",
+        accent: {
+          primary: "var(--accent-primary)",
+          secondary: "var(--accent-secondary)",
+          tertiary: "var(--accent-tertiary)"
+        }
       },
       fontFamily: {
         display: ["var(--font-unbounded)", "system-ui", "sans-serif"],
         body: ["var(--font-space)", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        glow: "0 30px 80px rgba(14, 165, 233, 0.2)",
-        pulse: "0 0 40px rgba(34, 211, 238, 0.35)"
+        glow: "0 30px 80px var(--shadow-glow)",
+        pulse: "0 0 40px var(--shadow-pulse)"
       },
       keyframes: {
         orbit: {

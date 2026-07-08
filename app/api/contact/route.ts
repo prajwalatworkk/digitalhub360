@@ -8,7 +8,7 @@ const mailEnv = ["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS", "MAIL_TO"];
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, goal, budget, message } = body;
+    const { name, phone, email, goal, budget, message } = body;
 
     if (!name || !email) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -24,6 +24,7 @@ export async function POST(request: Request) {
 
     const payload = {
       name,
+      phone: phone ?? "",
       email,
       goal,
       budget,
@@ -56,6 +57,7 @@ export async function POST(request: Request) {
       const html = `
         <h2>New Strategy Request</h2>
         <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Phone:</strong> ${phone ?? ""}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Goal:</strong> ${goal ?? ""}</p>
         <p><strong>Budget:</strong> ${budget ?? ""}</p>
