@@ -70,6 +70,14 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           />
         </div>
       </article>
+      <!-- Step 1: paste once in your <head> -->
+<script
+  src="https://cms.serves.in/embed.js"
+  data-site="pub_0b118e097c041c2fdd4679688170dbb8"
+  data-target="#embedcms-content"
+  defer
+></script><!-- Step 2: paste where content should appear in <body> -->
+<div id="embedcms-content"></div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </main>
   );
