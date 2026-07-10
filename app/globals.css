@@ -362,3 +362,87 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* --- CMS content typography --- */
+.cms-content h1 {
+  font-family: var(--font-unbounded), system-ui, sans-serif;
+  margin-top: 2.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.cms-content h2 {
+  font-family: var(--font-unbounded), system-ui, sans-serif;
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  color: var(--text);
+  scroll-margin-top: 7rem;
+}
+.cms-content h3 {
+  font-family: var(--font-unbounded), system-ui, sans-serif;
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  color: var(--text);
+  scroll-margin-top: 7rem;
+}
+.cms-content p {
+  margin-top: 1rem;
+  line-height: 1.625;
+  color: var(--text-muted);
+}
+.cms-content ul {
+  margin-top: 1rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+}
+.cms-content ul li, .cms-content ol li {
+  margin-top: 0.5rem;
+}
+.cms-content ol {
+  margin-top: 1rem;
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  color: var(--text-muted);
+}
+.cms-content a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.cms-content img {
+  margin-top: 1.5rem;
+  border-radius: 1rem;
+  max-width: 100%;
+  height: auto;
+}
+.cms-content blockquote {
+  margin-top: 1.5rem;
+  border-left: 4px solid var(--accent-primary);
+  background: var(--glass-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  color: var(--text);
+}
+.cms-content table {
+  width: 100%;
+  text-align: left;
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+  border-collapse: collapse;
+}
+.cms-content th {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elevated);
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+}
+.cms-content td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  color: var(--text);
+}
+
