@@ -4,7 +4,17 @@ import { products } from "@/content/products";
 const BASE_URL = "https://digitalhub360.in";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticRoutes = ["", "/services", "/products", "/knowledge-hub", "/roi-lab", "/contact"].map((route) => ({
+  const staticRoutes = [
+    "",
+    "/services",
+    "/products",
+    "/knowledge-hub",
+    "/roi-lab",
+    "/contact",
+    "/privacy-policy",
+    "/terms-and-conditions",
+    "/data-deletion"
+  ].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date()
   }));

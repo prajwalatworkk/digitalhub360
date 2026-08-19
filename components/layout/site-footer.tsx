@@ -75,6 +75,12 @@ const serviceLinks = [
   "WhatsApp Marketing"
 ];
 
+const legalLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Data Deletion", href: "/data-deletion" }
+];
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface/40 px-6 pb-8 pt-14">
@@ -173,11 +179,28 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex max-w-6xl flex-wrap items-center justify-between gap-3 border-t border-border pt-6 text-xs text-muted">
-        <p>© {new Date().getFullYear()} DigitalHub360. All rights reserved.</p>
-        <p>
-          Best Digital Marketing Agency in Bangalore · <span className="text-accent-primary">Made with ❤️ in HSR Layout</span>
-        </p>
+      <div className="mx-auto mt-12 max-w-6xl border-t border-border pt-6">
+        <nav
+          aria-label="Legal"
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs md:justify-start"
+        >
+          {legalLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-muted transition hover:text-accent-primary"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs text-muted">
+          <p>© {new Date().getFullYear()} DigitalHub360. All rights reserved.</p>
+          <p>
+            Best Digital Marketing Agency in Bangalore ·{" "}
+            <span className="text-accent-primary">Made with ❤️ in HSR Layout</span>
+          </p>
+        </div>
       </div>
     </footer>
   );
