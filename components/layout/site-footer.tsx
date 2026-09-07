@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { branches, formatAddress } from "@/content/branches";
 
 // Brand icons inlined from Feather Icons (MIT) — this lucide-react version
 // ships no social/brand glyphs.
@@ -63,7 +64,7 @@ const quickLinks = [
   { label: "ROI Lab", href: "/roi-lab" },
   { label: "SaaS Products", href: "/products" },
   { label: "Knowledge Hub", href: "/knowledge-hub" },
-  { label: "Contact Us", href: "/contact" }
+  { label: "Branches", href: "/branches" }
 ];
 
 const serviceLinks = [
@@ -166,12 +167,21 @@ export function SiteFooter() {
                 <Phone size={16} className="shrink-0 text-accent-primary" /> +91 78922 18476
               </a>
             </li>
-            <li className="flex items-center gap-3 text-foreground/80">
-              <MapPin size={16} className="shrink-0 text-accent-primary" /> HSR Layout, Bangalore
-            </li>
+            {branches.map((branch) => (
+              <li key={branch.slug} className="flex gap-3 text-foreground/80">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-accent-primary" />
+                <span>
+                  <span className="text-foreground">{branch.name}</span>
+                  <br />
+                  <span className="text-xs leading-relaxed text-muted">
+                    {formatAddress(branch)}
+                  </span>
+                </span>
+              </li>
+            ))}
           </ul>
           <Link
-            href="/contact"
+            href="/branches"
             className="mt-5 inline-block rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-glow transition hover:scale-105"
           >
             Book Free Strategy Call

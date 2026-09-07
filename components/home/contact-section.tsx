@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { HeroLeadForm } from "./hero-lead-form";
 import { Reveal } from "./reveal";
@@ -42,8 +43,11 @@ export function ContactSection() {
                 <MapPin size={18} />
               </span>
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-muted">HQ</p>
-                <p className="text-foreground">HSR Layout, Bangalore</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-muted">Offices</p>
+                <p className="text-foreground">BTM 1st Stage &amp; HSR Layout, Bengaluru</p>
+                <Link href="/branches" className="text-xs text-accent-primary hover:underline">
+                  View both branches →
+                </Link>
               </div>
             </div>
           </div>

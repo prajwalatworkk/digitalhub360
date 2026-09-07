@@ -6,7 +6,7 @@ import { createContext, useCallback, useContext, useEffect, useState } from "rea
 import { HeroLeadForm } from "@/components/home/hero-lead-form";
 
 type LeadModalContextValue = {
-  open: (service?: string) => void;
+  open: (service?: string, branch?: string) => void;
   close: () => void;
 };
 
@@ -21,9 +21,11 @@ export function useLeadModal() {
 export function LeadModalProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [service, setService] = useState<string | undefined>(undefined);
+  const [branch, setBranch] = useState<string | undefined>(undefined);
 
-  const open = useCallback((svc?: string) => {
+  const open = useCallback((svc?: string, br?: string) => {
     setService(svc);
+    setBranch(br);
     setIsOpen(true);
   }, []);
 
@@ -70,7 +72,7 @@ export function LeadModalProvider({ children }: { children: React.ReactNode }) {
               >
                 <X size={18} />
               </button>
-              <HeroLeadForm defaultService={service} />
+              <HeroLeadForm defaultService={service} branchName={branch} />
             </motion.div>
           </motion.div>
         )}

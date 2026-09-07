@@ -10,7 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/products",
     "/knowledge-hub",
     "/roi-lab",
-    "/contact",
+    "/branches",
     "/privacy-policy",
     "/terms-and-conditions",
     "/data-deletion"

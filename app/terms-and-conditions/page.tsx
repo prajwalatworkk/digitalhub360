@@ -29,8 +29,8 @@ export default function TermsPage() {
 
       <LegalSection heading="2. About us">
         <p>
-          DigitalHub360 is a digital marketing agency operating from HSR Layout, Bengaluru,
-          Karnataka, India. References to &ldquo;we&rdquo;, &ldquo;us&rdquo;, and &ldquo;our&rdquo;
+          DigitalHub360 is a digital marketing agency operating from Bengaluru, Karnataka, India,
+          with offices in BTM 1st Stage and HSR Layout. References to &ldquo;we&rdquo;, &ldquo;us&rdquo;, and &ldquo;our&rdquo;
           mean DigitalHub360. References to &ldquo;you&rdquo; or &ldquo;client&rdquo; mean the person
           or business using our website or services.
         </p>

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { formatAddress, primaryBranch } from "@/content/branches";
 
 // Shared shell for the legal pages (privacy, terms, data deletion).
 // Long-form text, so readability wins over decoration: narrow measure,
@@ -73,7 +74,7 @@ export function LegalContactCard() {
             +91 78922 18476
           </a>
         </li>
-        <li>Address: HSR Layout, Bengaluru, Karnataka, India</li>
+        <li>Address: {formatAddress(primaryBranch)}, India</li>
       </ul>
     </div>
   );

@@ -19,8 +19,8 @@ export default function PrivacyPolicyPage() {
       <LegalSection heading="1. Who we are">
         <p>
           DigitalHub360 (&ldquo;DigitalHub360&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
-          &ldquo;our&rdquo;) is a digital marketing agency based in HSR Layout, Bengaluru, Karnataka,
-          India. We provide SEO, paid advertising, social media marketing, website and app
+          &ldquo;our&rdquo;) is a digital marketing agency based in Bengaluru, Karnataka, India,
+          with offices in BTM 1st Stage and HSR Layout. We provide SEO, paid advertising, social media marketing, website and app
           development, AI video production, marketing automation, and related services, and we
           operate software products including Weflux, SheetPilot, EmbedCMS, and ShipTrack.
         </p>

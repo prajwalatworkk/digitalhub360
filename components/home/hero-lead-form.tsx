@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Loader2, Send } from "lucide-react";
+import { CheckCircle2, Loader2, MapPin, Send } from "lucide-react";
 import { useId, useMemo, useState } from "react";
 import { countries } from "@/content/countries";
 import { sendLead } from "@/lib/send-lead";
@@ -34,7 +34,13 @@ function validatePhone(digits: string, lengths: number[]): string | undefined {
   return undefined;
 }
 
-export function HeroLeadForm({ defaultService }: { defaultService?: string }) {
+export function HeroLeadForm({
+  defaultService,
+  branchName
+}: {
+  defaultService?: string;
+  branchName?: string;
+}) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [countryCode, setCountryCode] = useState(countries[0].code);
   const [name, setName] = useState("");
@@ -87,7 +93,9 @@ export function HeroLeadForm({ defaultService }: { defaultService?: string }) {
       email: email.trim(),
       goal: service,
       budget: "",
-      message: `Service requested: ${service}`
+      message: branchName
+        ? `Service requested: ${service} | Preferred branch: ${branchName}`
+        : `Service requested: ${service}`
     };
 
     try {
@@ -147,6 +155,12 @@ export function HeroLeadForm({ defaultService }: { defaultService?: string }) {
       <p className="text-xs uppercase tracking-[0.4em] text-muted">Free Strategy Session</p>
       <h3 className="mt-2 font-display text-xl text-foreground sm:text-2xl">Get your growth plan</h3>
       <p className="mt-1 text-sm text-muted">Tell us what you need — we respond within 24 hours.</p>
+      {branchName && (
+        <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs text-muted">
+          <MapPin size={13} className="text-accent-primary" />
+          Enquiry for <span className="text-foreground">{branchName}</span> branch
+        </p>
+      )}
 
       <form className="mt-6 space-y-4" onSubmit={handleSubmit} noValidate>
         <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />

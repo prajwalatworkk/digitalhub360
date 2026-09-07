@@ -12,7 +12,7 @@ const navLinks = [
   { label: "ROI Lab", href: "/roi-lab" },
   { label: "SaaS Products", href: "/products" },
   { label: "Knowledge Hub", href: "/knowledge-hub" },
-  { label: "Contact Us", href: "/contact" }
+  { label: "Branches", href: "/branches" }
 ];
 
 export function SiteHeader() {
