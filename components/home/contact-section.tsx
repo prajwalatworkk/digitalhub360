@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { HeroLeadForm } from "./hero-lead-form";
 import { Reveal } from "./reveal";
+import { branches } from "@/content/branches";
 
 export function ContactSection() {
   return (
@@ -44,7 +45,9 @@ export function ContactSection() {
               </span>
               <div>
                 <p className="text-xs uppercase tracking-[0.3em] text-muted">Offices</p>
-                <p className="text-foreground">BTM 1st Stage &amp; HSR Layout, Bengaluru</p>
+                <p className="text-foreground">
+                  {branches.map((b) => b.name).join(" · ")}
+                </p>
                 <Link href="/branches" className="text-xs text-accent-primary hover:underline">
                   View both branches →
                 </Link>

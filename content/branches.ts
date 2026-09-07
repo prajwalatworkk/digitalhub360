@@ -38,6 +38,21 @@ export const branches: Branch[] = [
     isPrimary: true
   },
   {
+    slug: "nagarbhavi",
+    name: "Nagarbhavi",
+    label: "Branch Office",
+    addressLines: ["KGS Arcade, 60 Feet Road", "Opposite Gold's Gym", "11th Block, Marilingappa Extension"],
+    locality: "Nagarbhavi",
+    city: "Bengaluru",
+    state: "Karnataka",
+    postalCode: "560072",
+    country: "India",
+    phone: PHONE,
+    email: EMAIL,
+    mapsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=KGS+Arcade%2C+60+Feet+Rd%2C+11th+Block%2C+Marilingappa+Extension%2C+Nagarbhavi%2C+Bengaluru%2C+Karnataka+560072"
+  },
+  {
     slug: "hsr-layout",
     name: "HSR Layout",
     label: "Branch Office",
