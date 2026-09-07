@@ -11,8 +11,10 @@ export type Branch = {
   country: string;
   phone: string;
   email: string;
-  /** Google Maps link for the "Get directions" button. */
+  /** Google Maps link for the "Directions" button (turn-by-turn). */
   mapsUrl?: string;
+  /** Verified Google Business Profile — listing, photos, and reviews. */
+  gmbUrl?: string;
   hours?: string;
   isPrimary?: boolean;
 };
@@ -35,6 +37,7 @@ export const branches: Branch[] = [
     email: EMAIL,
     mapsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=Digital+Hub+360%2C+97%2C+10th+Main+Rd%2C+KEB+Colony%2C+1st+Stage%2C+BTM+1st+Stage%2C+Bengaluru%2C+Karnataka+560029",
+    gmbUrl: "https://share.google/qAh7wqPTSbB2eqaed",
     isPrimary: true
   },
   {
@@ -50,7 +53,8 @@ export const branches: Branch[] = [
     phone: PHONE,
     email: EMAIL,
     mapsUrl:
-      "https://www.google.com/maps/dir/?api=1&destination=KGS+Arcade%2C+60+Feet+Rd%2C+11th+Block%2C+Marilingappa+Extension%2C+Nagarbhavi%2C+Bengaluru%2C+Karnataka+560072"
+      "https://www.google.com/maps/dir/?api=1&destination=KGS+Arcade%2C+60+Feet+Rd%2C+11th+Block%2C+Marilingappa+Extension%2C+Nagarbhavi%2C+Bengaluru%2C+Karnataka+560072",
+    gmbUrl: "https://share.google/c5AXq6kxwGveXOKTs"
   },
   {
     slug: "hsr-layout",

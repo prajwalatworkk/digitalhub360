@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { branches, formatAddress } from "@/content/branches";
+import { branches, formatAddress, primaryBranch } from "@/content/branches";
 
 // Brand icons inlined from Feather Icons (MIT) — this lucide-react version
 // ships no social/brand glyphs.
@@ -55,7 +55,11 @@ const socials = [
   { label: "Instagram", href: "https://www.instagram.com/digitalhub360.in", Icon: InstagramIcon },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/digitalhub360in/", Icon: LinkedinIcon },
   { label: "Facebook", href: "https://www.facebook.com/digitalhub360.in", Icon: FacebookIcon },
-  { label: "Google Business", href: "https://share.google/qAh7wqPTSbB2eqaed", Icon: GoogleBusinessIcon }
+  {
+    label: "Google Business",
+    href: primaryBranch.gmbUrl ?? "/branches",
+    Icon: GoogleBusinessIcon
+  }
 ];
 
 const quickLinks = [

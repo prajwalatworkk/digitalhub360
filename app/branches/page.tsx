@@ -33,7 +33,8 @@ const localBusinessSchema = {
       ...(branch.postalCode ? { postalCode: branch.postalCode } : {}),
       addressCountry: "IN"
     },
-    areaServed: "Bengaluru, Karnataka, India"
+    areaServed: "Bengaluru, Karnataka, India",
+    ...(branch.gmbUrl ? { hasMap: branch.gmbUrl, sameAs: [branch.gmbUrl] } : {})
   }))
 };
 

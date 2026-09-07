@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, Mail, MapPin, MessageSquare, Navigation, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, MessageSquare, Navigation, Phone, Star } from "lucide-react";
 import { useLeadModal } from "@/components/layout/lead-modal";
 import { telHref, type Branch } from "@/content/branches";
 
@@ -89,6 +89,17 @@ export function BranchCard({ branch, index }: { branch: Branch; index: number })
           </a>
         )}
       </div>
+
+      {branch.gmbUrl && (
+        <a
+          href={branch.gmbUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 flex items-center justify-center gap-1.5 text-xs text-muted transition hover:text-accent-primary"
+        >
+          <Star size={12} /> View on Google &amp; leave a review
+        </a>
+      )}
     </motion.article>
   );
 }
