@@ -37,7 +37,7 @@ export const branches: Branch[] = [
     email: EMAIL,
     mapsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=Digital+Hub+360%2C+97%2C+10th+Main+Rd%2C+KEB+Colony%2C+1st+Stage%2C+BTM+1st+Stage%2C+Bengaluru%2C+Karnataka+560029",
-    gmbUrl: "https://share.google/qAh7wqPTSbB2eqaed",
+    gmbUrl: "https://share.google/QT7P8w3jhjwsZ1woW",
     isPrimary: true
   },
   {
